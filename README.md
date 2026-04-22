@@ -51,7 +51,7 @@ Aplicação para fins acadêmicos em Java com Spring Boot que expõe uma API RES
 |3|Senha em texto puro|`SecurityConfig.passwordEncoder` retorna `NoOpPasswordEncoder`|Vazamento total do banco|Dump da tabela `usuarios`|
 |4|Token sem expiração|`TokenService.emitToken` retorna `username::ROLE`|Session hijacking|Reuso infinito do token|
 |5|Controle de acesso fraco|`JogoService.remover` não verifica role|Usuário comum deleta jogos|`DELETE /jogos/1` como atendente|
-|6|Endpoint sem validação|`JogoService.validarJogo` não roda em modo inseguro|Persistência de dados maliciosos|JSON com `<img onerror>`|
+|6|Endpoint sem validação|`JogoService.validarJogo` nãoestá sendo executado.|Persistência de dados maliciosos|JSON com `<img onerror>`|
 |7|Stack trace exposto|`GlobalExceptionHandler` adiciona `stackTrace`|Divulga detalhes internos|Qualquer erro revela classe/linha|
 |8|Dados sensíveis sem criptografia|`DataProtectionService.protect` retorna claro|Documento do cliente vazado|Dump tabela `clientes`|
 |9|Falha na validação de ID|`JogoService.atualizar` aceita `new Jogo()`|Manipulação de registros|`PUT /jogos/9999` cria objeto órfão|
