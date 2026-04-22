@@ -4,20 +4,20 @@ Aplicação para fins acadêmicos em Java com Spring Boot que expõe uma API RES
 
 ## Arquitetura
 
-- **Stack**: Spring Boot 3, Spring Web, Spring Data JPA, Spring Security, H2 (memória).
-- **Camadas**: `controller` (exposição REST) → `service` (regras + modo seguro/inseguro) → `repository` (JPA) → banco H2.
+- **Ferramentas**: Java, Spring Boot 3, Spring Web, Spring Data JPA, Spring Security, H2 (memória).
+- **Camadas**: `controller` (exposição REST) → `service` (regras) → `repository` (JPA) → banco H2.
 - **DTOs**: separados para requests/responses, evitando expor entidades diretamente.
 - **Segurança**: filtro próprio (`TokenAuthenticationFilter`) + `TokenService` ciente do modo; `AppSecurityProperties` centraliza `app.security.mode`.
 - **Utilidades**: `InputSanitizer` (JSoup) e `DataProtectionService` (AES) mostram contraste entre dados sanitizados/cifrados x sem proteção.
 
 ## Modelagem
 
-| Entidade | Campos principais | Observações |
-| --- | --- | --- |
-| `Usuario` | `username`, `senha`, `role` (`ADMIN`/`ATENDENTE`) | Senha com BCrypt no modo seguro, texto puro no modo inseguro. |
-| `Cliente` | `nome`, `email`, `documento`, `telefone` | Documento cifrado com AES no modo seguro. |
-| `Jogo` | `titulo`, `genero`, `precoDiaria`, `disponivel` | Controle de disponibilidade e validações no modo seguro. |
-| `Locacao` | `cliente`, `jogo`, `dataLocacao`, `valorTotal`, `status` | Calcula valor, controla devolução e multas. |
+| Entidade | Campos principais | 
+| --- | --- | 
+| `Usuario` | `username`, `senha`, `role` (`ADMIN`/`ATENDENTE`) | 
+| `Cliente` | `nome`, `email`, `documento`, `telefone` |
+| `Jogo` | `titulo`, `genero`, `precoDiaria`, `disponivel` | 
+| `Locacao` | `cliente`, `jogo`, `dataLocacao`, `valorTotal`, `status` | 
 
 ## Endpoints
 
