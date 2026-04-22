@@ -39,7 +39,7 @@ Aplicação para fins acadêmicos em Java com Spring Boot que expõe uma API RES
 
 1. Usuário cadastrado (`POST /usuarios`).
 2. Login (`POST /login`) retorna token (Seguro: UUID+expiração / Inseguro: `username::ROLE`).
-3. Token enviado via `Authorization: Bearer <token>`. Em modo inseguro é possível burlar com `X-Bypass-Auth`.
+3. Token enviado via `Authorization: Bearer <token>`. É possível burlar com `X-Bypass-Auth`.
 4. CRUD de jogos, clientes e locações seguem validações do serviço.
 
 ## Vulnerabilidades
