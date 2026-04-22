@@ -24,13 +24,13 @@ Aplicação para fins acadêmicos em Java com Spring Boot que expõe uma API RES
 | Método | Caminho | Função |
 | --- | --- | --- |
 | POST | `/usuarios` | Cria usuários com perfis. |
-| POST | `/login` | Autentica e emite token (ou token fraco no modo inseguro). |
+| POST | `/login` | Autentica e emite token. |
 | GET | `/jogos` | Lista jogos. |
-| POST | `/jogos` | Cadastra jogo (com/sem validação conforme modo). |
+| POST | `/jogos` | Cadastra jogo. |
 | PUT | `/jogos/{id}` | Atualiza jogo. |
-| DELETE | `/jogos/{id}` | Remove jogo (controle de acesso apenas no modo seguro). |
+| DELETE | `/jogos/{id}` | Remove jogo. |
 | GET | `/clientes` | Lista clientes. |
-| POST | `/clientes` | Cadastra cliente (documento cifrado apenas no modo seguro). |
+| POST | `/clientes` | Cadastra cliente . |
 | POST | `/locacoes` | Registra locação, bloqueando disponibilidade. |
 | GET | `/locacoes` | Lista locações. |
 | PUT | `/locacoes/{id}/devolucao` | Registra devolução e calcula multa. |
